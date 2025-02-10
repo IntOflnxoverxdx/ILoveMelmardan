@@ -105,7 +105,7 @@ html {
 .heart__letters{
     width: calc(100% - 60px);
     max-height: calc(100% - 30px);
-    font-size: 24px;
+    font-size: 22px;
     position: absolute;
     top: 50%;
     left: 50%;
