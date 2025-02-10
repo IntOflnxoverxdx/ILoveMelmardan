@@ -1,8 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 body,
@@ -103,19 +103,21 @@ html {
 }
 
 .heart__letters{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    font-size: 22px;
-    position: relative;
+    width: calc(100% - 60px);
+    max-height: calc(100% - 30px);
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     color: #ffbbbb;
     z-index: 99999;
+    text-align: justify;
 }
 
 
 .heart__letter{
     display: inline-block;
-    /* animation: fall 2s cubic-bezier(.17,.67,.83,.67) 2s 1 forwards; */
     animation-name: fall;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(.51,-0.39,.9,.91);
