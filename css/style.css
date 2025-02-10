@@ -54,24 +54,26 @@ html {
 }
 
 
-.convert__media.active{
+.convert__media.active {
     transform: translate(-50%, 0);
     height: auto;
     animation: activation 1s ease-in-out 0s 1 forwards;
 }
 
 
-.heart{
+.heart {
     z-index: 9999;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     aspect-ratio: .745;
     width: 70%;
     max-width: 600px;
 }
-.heart__top,.heart__bottom{
+
+.heart__top,
+.heart__bottom {
     transition: 1s;
     position: absolute;
     left: 0;
@@ -82,44 +84,47 @@ html {
     background-color: #eb4c4c;
 }
 
-.heart__bottom{
-    transform: translate(0,100%);
+.heart__bottom {
+    transform: translate(0, 100%);
 }
 
-.heart.active .heart__top{
+.heart.active .heart__top {
     animation: heart__top 1s ease-in-out 0s 1 forwards;
 }
-.heart.active .heart__bottom{
+
+.heart.active .heart__bottom {
     animation: heart__bottom 1s ease-in-out 0s 1 forwards;
 }
 
-.heart.disabled .heart__top{
+.heart.disabled .heart__top {
     transform-origin: left;
     scale: 0 100%;
 }
-.heart.disabled .heart__bottom{
+
+.heart.disabled .heart__bottom {
     transform-origin: right;
     scale: 0 100%;
 }
 
-.heart__letters{
-    width: calc(100% - 60px);
-    max-height: calc(100% - 30px);
-    font-size: 22px;
+.heart__letters {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    font-size: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: #ffbbbb;
     z-index: 99999;
 }
 
 
-.heart__letter{
+.heart__letter {
     display: inline-block;
     animation-name: fall;
     animation-duration: 3s;
-    animation-timing-function: cubic-bezier(.51,-0.39,.9,.91);
+    animation-timing-function: cubic-bezier(.51, -0.39, .9, .91);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-play-state: paused;
@@ -127,25 +132,29 @@ html {
 }
 
 @keyframes heart__top {
-    0%{
-        transform: translate(0,0);
+    0% {
+        transform: translate(0, 0);
     }
-    50%{
-        transform: translate(-50%,50%);
+
+    50% {
+        transform: translate(-50%, 50%);
     }
-    100%{
+
+    100% {
         transform: rotate(45deg) translate(17%, 50%);
     }
 }
 
 @keyframes heart__bottom {
-    0%{
-        transform: translate(0,100%);
+    0% {
+        transform: translate(0, 100%);
     }
-    50%{
-        transform: translate(50%,50%);
+
+    50% {
+        transform: translate(50%, 50%);
     }
-    100%{
+
+    100% {
         transform: rotate(-45deg) translate(-17%, 50%);
     }
 }
@@ -153,22 +162,35 @@ html {
 
 
 @keyframes activation {
-    30%{
-        transform: translate(-50%,-100%);
+    30% {
+        transform: translate(-50%, -100%);
     }
-    
-    100%{
+
+    100% {
         scale: 100% 100%;
         width: 150%;
-        transform: translate(-50%,-40%);
+        transform: translate(-50%, -40%);
     }
 }
 
 @keyframes fall {
-    0%{
-        transform: translate(0,0);
+    0% {
+        transform: translate(0, 0);
     }
-    100%{
-        transform: translate(0,3000px);
+
+    100% {
+        transform: translate(0, 3000px);
+    }
+}
+
+@media screen and (max-width:786px) {
+    .heart__letters {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .heart__letters {
+        font-size: 20px;
     }
 }
